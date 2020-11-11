@@ -1,6 +1,19 @@
-
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.category %></p>
-
-<%= link_to 'Go Back to the list', restaurants_path %>
+<div class="container">
+  </br>
+<%= link_to '<-- Go Back to the list', restaurants_path %>
+  </br>
+  </br>
+  </br>
+  <h1><%= @restaurant.name %></h1>
+  <hr>
+  <div class="row">
+      <div class="card ml-3 shadow" style="width: 50rem;">
+        <div class="card-body">
+          <p>Address: <%= @restaurant.address %></p>
+          <hr>
+          <p>Category: <%= @restaurant.category.capitalize %></p>
+          <%= link_to "Edit", edit_restaurant_path(@restaurant), :class => "btn btn-danger" %>
+        </div>
+      </div>
+  </div>
+</div>

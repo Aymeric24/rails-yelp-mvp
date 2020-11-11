@@ -1,7 +1,21 @@
-<h1>Here's all your restaurants</h1>
+<div class="container">
+  <div class="float-right m-3 rounded"><%= link_to '+ New', new_restaurant_path, :class =>"btn btn-danger" %></div>
+  <h1>Here's all your restaurants</h1>
+  <hr>
+    <div class="row">
+      <div class="card-group d-flex">
+        <% @restaurants.each do |restaurant|%>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="card shadow ml-3 mb-3" style="border-radius: 5px;">
+            <img class="card-img-top" src="<%= restaurant.image_url %>" alt="Card image cap" style="border-radius: 5px 5px 0px 0px ;">
+            <div class="card-body">
+              <h5 class="card-title"><%= restaurant.name %></h5>
+              <%= link_to 'See More', restaurant_path(restaurant.id), :class => "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
 
-<% @restaurants.each do |restaurant|%>
-  <ul>
-    <li><%= restaurant.index%></li>
-  </ul>
-<% end %>

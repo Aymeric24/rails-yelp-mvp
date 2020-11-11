@@ -3,12 +3,15 @@
 <hr>
 </br>
     <%= simple_form_for [@restaurant] do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.input :name %>
       </br>
-      <%= f.label :address %>
-      <%= f.text_field :address %>
+
+      <%= f.input :address %>
       </br>
-      <%= f.select :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian']%>
+      <%= f.input :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian']%>
+      </br>
+      <%= f.label :image_url%>
+      <%= f.text_field :image_url %>
+
       <%= f.submit "Submit review", class: "btn btn-primary" %>
     <% end %>

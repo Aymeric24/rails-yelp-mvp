@@ -1,0 +1,17 @@
+<div class="container">
+<h1>So you want to edit <%= @restaurant.name%>?</h1>
+<hr>
+</br>
+<%= simple_form_for [@restaurant] do |f| %>
+  <%= f.input :name %>
+  </br>
+
+  <%= f.input :address %>
+  </br>
+  <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+  </br>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
