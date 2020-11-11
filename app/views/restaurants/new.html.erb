@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Here you can create a new Restaurant</h1>
+<hr>
+</br>
+    <%= simple_form_for [@restaurant] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      </br>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      </br>
+      <%= f.select :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian']%>
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
